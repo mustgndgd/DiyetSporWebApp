@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="69da571056bc4ecd957220d5bc33cd8b" Name="Diagram1">
+        <EntityTypeShape EntityType="dbdiyetsporModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbdiyetsporModel.tblAntreman" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbdiyetsporModel.tblAntremanAyrinti" Width="1.5" PointX="7.5" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbdiyetsporModel.tblBlog" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbdiyetsporModel.tblDiyet" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbdiyetsporModel.tblHareketler" Width="1.5" PointX="3" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbdiyetsporModel.tblislemler" Width="1.5" PointX="5.25" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbdiyetsporModel.tblKullanici" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbdiyetsporModel.tblKullaniciBilgi" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbdiyetsporModel.tblMenu" Width="1.5" PointX="5.25" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbdiyetsporModel.tblMesaj" Width="1.5" PointX="5.25" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbdiyetsporModel.tblProgram" Width="1.5" PointX="5.25" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbdiyetsporModel.tblTalep" Width="1.5" PointX="5.25" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbdiyetsporModel.tblYemekler" Width="1.5" PointX="3" PointY="24.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbdiyetsporModel.tblDiyetAyrinti" Width="1.5" PointX="7.5" PointY="8.375" IsExpanded="true" />
+        <AssociationConnector Association="dbdiyetsporModel.FK_tblAntreman_tblKullanici" ManuallyRouted="false" />
+        <AssociationConnector Association="dbdiyetsporModel.FK_tblAntreman_tblKullanici1" ManuallyRouted="false" />
+        <AssociationConnector Association="dbdiyetsporModel.FK_tblAntremanAyrinti_tblAntreman" ManuallyRouted="false" />
+        <AssociationConnector Association="dbdiyetsporModel.FK_tblAntremanAyrinti_tblProgram" ManuallyRouted="false" />
+        <AssociationConnector Association="dbdiyetsporModel.FK_tblBlog_tblKullanici" ManuallyRouted="false" />
+        <AssociationConnector Association="dbdiyetsporModel.FK_tblDiyet_tblKullanici" ManuallyRouted="false" />
+        <AssociationConnector Association="dbdiyetsporModel.FK_tblDiyet_tblKullanici1" ManuallyRouted="false" />
+        <AssociationConnector Association="dbdiyetsporModel.FK_tblDiyetAyrinti_tblDiyet" ManuallyRouted="false" />
+        <AssociationConnector Association="dbdiyetsporModel.FK_tblProgram_tblHareketler" ManuallyRouted="false" />
+        <AssociationConnector Association="dbdiyetsporModel.FK_tblislemler_tblKullanici" ManuallyRouted="false" />
+        <AssociationConnector Association="dbdiyetsporModel.FK_tblKullanici_tblKullaniciBilgi" ManuallyRouted="false" />
+        <AssociationConnector Association="dbdiyetsporModel.FK_tblMesaj_tblKullanici" ManuallyRouted="false" />
+        <AssociationConnector Association="dbdiyetsporModel.FK_tblMesaj_tblKullanici1" ManuallyRouted="false" />
+        <AssociationConnector Association="dbdiyetsporModel.FK_tblTalep_tblKullanici" ManuallyRouted="false" />
+        <AssociationConnector Association="dbdiyetsporModel.FK_tblTalep_tblKullanici1" ManuallyRouted="false" />
+        <AssociationConnector Association="dbdiyetsporModel.FK_tblDiyetAyrinti_tblMenu" ManuallyRouted="false" />
+        <AssociationConnector Association="dbdiyetsporModel.FK_tblMenu_tblYemekler" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

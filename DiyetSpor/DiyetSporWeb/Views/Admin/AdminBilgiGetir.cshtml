@@ -1,0 +1,32 @@
+﻿@using DiyetSporWeb.Models
+@model tblKullanici
+@{
+    ViewBag.Title = "AdminBilgiGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+    <h2>Admin Bilgi GÜncelleme </h2>
+  
+@using (Html.BeginForm("AdminBilgiGuncelle", "Admin", FormMethod.Post))
+{
+    <div class="form-group">
+        <div>
+            <lable>Kullanici id</lable>
+            @Html.TextBoxFor(m => m.kullaniciid, new { @class = "form-control", @readonly = "readonly" })
+        </div>
+       
+        <div>
+            <label>Şifresi</label>
+            @Html.TextBoxFor(m => m.kullaniciSifre, new { @class = "form-control", required = "", maxlength = "10" })
+            @Html.ValidationMessageFor(m => m.kullaniciSifre, "", new { @style = "color:red" })
+        </div>
+         
+        <div>
+            <lable>Müşteri Eposta</lable>
+            @Html.TextBoxFor(m => m.kullaniciEmail, new { @class = "form-control", maxlength = "100" })
+            @Html.ValidationMessageFor(m => m.kullaniciEmail, "", new { @style = "color:red" })
+        </div>
+
+    </div>
+    <button type="submit" class="form-control success">Güncelle</button>
+}

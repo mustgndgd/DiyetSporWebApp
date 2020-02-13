@@ -1,0 +1,88 @@
+﻿@using DiyetSporWeb.Models
+@model List<admintalepmodel>
+@{
+    ViewBag.Title = "TalepAkisListeleme";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+ 
+
+<div class="container-fluid">
+      
+    <div class="card shadow mb-4">
+        
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Talep id</th>
+                            <th>Talep Eden</th>
+                            <th>Talep Edilen Danışman</th>
+                            <th>Talep Tarihi</th>
+                            <th>Talep Tipi</th>
+                            <th>Talep Durumu</th>
+                            <th>Durum Değiştir</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Talep id</th>
+                            <th>Talep Eden</th>
+                            <th>Talep Edilen Danışman</th>
+                            <th>Talep Tarihi</th>
+                            <th>Talep Tipi</th>
+                            <th>Talep Durumu</th>
+                            <th>Durum Değiştir</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+
+                        @foreach (var talep in Model)
+                        {
+                            <tr>
+                                <td>@talep.talepid</td>
+                                <td>@talep.talepEden @talep.talepEdenAd</td>
+                                <td>@talep.talepEdilenDanisman @talep.talepEdilenDanismanAd </td>
+                                <td>@talep.talepTarihi</td>
+                                <td>@talep.talepTip</td>
+
+                                @if (@talep.talepDurum == false)
+                                {
+                                    <td>
+                                        ONAY BEKLİYOR
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        ONAYLANDI
+                                    </td>
+                                } 
+
+                                @if (talep.talepDurum==false)
+                                {
+                                    <td>
+                                        <a href="/Admin/TalepAktifEt/@talep.talepid" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">ONAYLA</a>
+
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                    ONAYLANMIŞ   
+                                    </td>
+                                }
+
+
+                            </tr>
+                        }
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->

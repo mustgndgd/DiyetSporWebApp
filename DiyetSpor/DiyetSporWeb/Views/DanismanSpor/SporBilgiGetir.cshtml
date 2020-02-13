@@ -1,0 +1,52 @@
+﻿@using DiyetSporWeb.Models
+@model tblKullanici
+@{
+    ViewBag.Title = "SporBilgiGetir";
+    Layout = "~/Views/Shared/_DanismanSporLayout.cshtml";
+}
+
+<h2>Bilgi GÜncelleme</h2>
+
+
+@using (Html.BeginForm("SporBilgiGuncelle", "DanismanSpor", FormMethod.Post))
+{
+    <div class="form-group">
+        <div>
+            <lable>Kullanici id</lable>
+            @Html.TextBoxFor(m => m.kullaniciid, new { @class = "form-control", @readonly = "readonly" })
+        </div>
+        <div>
+            <lable>Ad</lable>
+            @Html.TextBoxFor(m => m.kullaniciAd, new { @class = "form-control", required = "", maxlength = "20"  })
+        </div>
+        <div>
+            <lable>Soyad</lable>
+            @Html.TextBoxFor(m => m.kullaniciSoyad, new { @class = "form-control", required = "", maxlength = "20"  })
+        </div>
+        <div>
+            <lable>Kullanici TC numarası</lable>
+            @Html.TextBoxFor(m => m.kullaniciTc, new { @class = "form-control", @readonly = "readonly" })
+        </div>
+        <div>
+            <label>Şifresi</label>
+            @Html.TextBoxFor(m => m.kullaniciSifre, new { @class = "form-control", required = "", maxlength = "10" })
+            @Html.ValidationMessageFor(m => m.kullaniciSifre, "", new { @style = "color:red" })
+        </div>
+        <div>
+            <lable>Müşteri Doğum Günü</lable>
+            @Html.TextBoxFor(m => m.kullaniciDogumTarihi, new { @class = "form-control", @readonly = "readonly" })
+        </div>
+        <div>
+            <lable>Müşteri Telefon</lable>
+            @Html.TextBoxFor(m => m.kullaniciTelefon, new { @class = "form-control", maxlength = "11" })
+            @Html.ValidationMessageFor(m => m.kullaniciTelefon, "", new { @style = "color:red" })
+        </div>
+        <div>
+            <lable>Müşteri Eposta</lable>
+            @Html.TextBoxFor(m => m.kullaniciEmail, new { @class = "form-control", maxlength = "100" })
+            @Html.ValidationMessageFor(m => m.kullaniciEmail, "", new { @style = "color:red" })
+        </div>
+        
+    </div>
+    <button type="submit" class="form-control success">Güncelle</button>
+}

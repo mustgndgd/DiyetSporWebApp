@@ -1,0 +1,74 @@
+﻿@using DiyetSporWeb.Models
+@model List<tblKullanici>
+@{
+    ViewBag.Title = "UyeListele";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h3>Üyeleri listeleme ekranı </h3>
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary"> Üyeler</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Ad Soyad</th>
+                            <th>Kayıt Tarihi</th>
+                            <th>Doğum Tarihi</th>
+                            <th>E mail</th>
+                            <th>Aktiflik</th>
+
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Ad Soyad</th>
+                            <th>Kayıt Tarihi</th>
+                            <th>Doğum Tarihi</th>
+                            <th>E mail</th>
+                            <th>Aktiflik</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @foreach (var uye in Model)
+                        {
+                            <tr>
+                                <td>@uye.kullaniciAd @uye.kullaniciSoyad</td>
+                                <td>@uye.kullaniciKayitTarihi</td>
+                                <td>@uye.kullaniciDogumTarihi</td>
+                                <td>@uye.kullaniciEmail</td>
+                                @if (uye.kullaniciHesapAKtiflik == true)
+                                {
+                                    <td>
+                                        <a href="/Admin/UyeAktiflik/@uye.kullaniciid" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> PASİF ET</a>
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        <a href="/Admin/UyeAktiflik/@uye.kullaniciid" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> AKTİF ET</a>
+                                    </td>
+                                }
+
+
+                            </tr>
+
+                        }
+
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->

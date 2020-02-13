@@ -1,0 +1,57 @@
+﻿@using DiyetSporWeb.Models
+@model List<uyeDanismanTalepModel>
+@{
+    ViewBag.Title = "DanismanTalebindeBulun";
+    Layout = "~/Views/Shared/_UyeLayout.cshtml";
+}
+ 
+<div class="container-fluid">
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Aktif Danışmanlar</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Ad Soyad</th>
+                            <th>Danışman Tipi</th>
+                            <th>BAŞVUR</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Ad Soyad</th>
+                            <th>Danışman Tipi</th>
+                            <th>BAŞVUR</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @foreach (var danisman in Model)
+                        {
+                            <tr>
+                                <td>@danisman.kullaniciAd @danisman.kullaniciSoyad </td>
+
+                                @if (danisman.kullaniciTipi == "D")
+                                {
+                                    <td>DİYETİSYEN</td>
+                                }
+                                else
+                                {
+                                    <td>SPOR ANTRENÖRÜ</td>
+                                }
+                                <td>
+                                    <a href="/Uye/UyeDanismanBasvur/@danisman.kullaniciid" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">BAVŞUR</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->

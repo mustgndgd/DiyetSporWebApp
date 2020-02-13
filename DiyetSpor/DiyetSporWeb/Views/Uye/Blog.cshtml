@@ -1,0 +1,23 @@
+﻿@using DiyetSporWeb.Models
+@model List<tblBlog>
+@{
+    ViewBag.Title = "Blog";
+    Layout = "~/Views/Shared/_UyeLayout.cshtml";
+}
+
+<h2>Blog</h2>
+
+@foreach (var blog in Model)
+{
+
+    <!-- Basic Card Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">@blog.blogBaslik  |       Blog  Puan:   @blog.blogPuan </h6>
+        </div>
+        <div class="card-body">
+            @blog.blogDetay
+        </div>
+    </div>
+    <hr />
+}

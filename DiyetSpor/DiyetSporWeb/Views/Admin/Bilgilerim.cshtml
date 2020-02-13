@@ -1,0 +1,45 @@
+﻿@using DiyetSporWeb.Models
+@model tblKullanici
+@{
+    ViewBag.Title = "Bilgilerim";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Admin Bilgilerim</h2>
+
+
+<div class="container">
+
+    <form>
+        <table border="0">
+            <tr>
+                <td>
+                    <label>Kullanici id: </label>
+                </td>
+                <td>
+                    @Model.kullaniciid
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Email: </label>
+                </td>
+                <td>
+                    @Model.kullaniciEmail
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label>Şifreniz : </label>
+                </td>
+                <td>
+                    @Model.kullaniciSifre
+                </td>
+            </tr>
+        </table>
+    </form>
+    <a href="/Admin/AdminBilgiGetir" class="btn btn-success">Güncelle</a>
+
+</div>

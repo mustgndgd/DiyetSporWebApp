@@ -1,0 +1,26 @@
+﻿@using DiyetSporWeb.Models
+@model tblBlog
+@{
+    ViewBag.Title = "BlogYaz";
+    Layout = "~/Views/Shared/_DanismanDiyetLayout.cshtml";
+}
+
+
+
+@using (Html.BeginForm("BlogYaz", "DanismanDiyet", FormMethod.Post))
+{
+<div class="form-group">
+
+    <div>
+        <lable>Başlık</lable>
+        @Html.TextBoxFor(m => m.blogBaslik, new { @class = "form-control", required = "", maxlength = "50" })
+    </div>
+
+    <div>
+        <lable>İçerik</lable>
+        @Html.TextBoxFor(m => m.blogDetay, new { @class = "form-control", required = "", maxlength = "500" })
+    </div>
+
+</div>
+    <button type="submit" class="form-control success">Yaz</button>
+}

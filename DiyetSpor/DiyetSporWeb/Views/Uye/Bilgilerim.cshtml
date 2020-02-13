@@ -1,0 +1,84 @@
+﻿@using DiyetSporWeb.Models
+@model tblKullanici
+@{
+    ViewBag.Title = "Bilgilerim";
+    Layout = "~/Views/Shared/_UyeLayout.cshtml";
+}
+
+<h2>Bilgilerim</h2>
+ 
+<div class="container">
+
+    <form>
+        <table border="0">
+            <tr>
+                <td>
+                    <label>Kullanici id: </label>
+                </td>
+                <td>
+                    @Model.kullaniciid
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Ad ve soyad : </label>
+                </td>
+                <td>
+                    @Model.kullaniciAd @Model.kullaniciSoyad
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>TC numarası: </label>
+                </td>
+                <td>
+                    @Model.kullaniciTc
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Email: </label>
+                </td>
+                <td>
+                    @Model.kullaniciEmail
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label>Doğum tarihi : </label>
+                </td>
+                <td>
+                    @Model.kullaniciDogumTarihi
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Kayıt Tarihi : </label>
+                </td>
+                <td>
+                    @Model.kullaniciKayitTarihi
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Telefon numarası : </label>
+                </td>
+                <td>
+                    @Model.kullaniciTelefon
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Şifreniz : </label>
+                </td>
+                <td>
+                    @Model.kullaniciSifre
+                </td>
+            </tr>
+        </table>
+    </form>
+    <a href="/Uye/UyeBilgiGetir" class="btn btn-success">Güncelle</a>
+
+</div>
